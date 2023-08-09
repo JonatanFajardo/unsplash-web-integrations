@@ -1,0 +1,28 @@
+<div class="container">
+  <!-- <img src="../assets/images/john-towner-JgOeRuGD_Y4-unsplash.jpg" alt="" id="header-image"> -->
+  <div class="row">
+    <div class="col-6">
+      <form action="">
+        <div class="input-group">
+          <input
+            #search
+            type="text"
+            class="form-control"
+            placeholder="Busca imágenes de alta resolución"
+          />
+          <div class="input-group-append">
+            <a (click)="buscarImagen(search.value)" class="btn btn-primary"
+              >Buscar</a
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="masonry-container">
+    <div class="box" *ngFor="let item of resultado.results">
+      <img src="{{ item.urls['small'] }}" alt="" loading="lazy" />
+    </div>
+  </div>
+</div>
